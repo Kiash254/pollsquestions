@@ -1,0 +1,27 @@
+{% extends 'polls/base.html' %}
+
+
+{%  block content  %}
+<h1 class="text-center mb-3">Polls questions</h1>
+{% if questions  %}
+{% for quiz in questions %}
+  <div class="card mb-3">
+    <div class="card-boy">
+        <p class="lead">
+            {{ quiz.quiz_text }}
+        </p>
+        <a href="{%url 'polls:details' quiz.id%}"> <button class="btn btn-primary">
+            Vote Now
+        </button></a>
+        <a href="{%url 'polls:results' quiz.id%}"> <button class="btn btn-secondary">
+            Results
+        </button></a>
+    </div>
+  </div>
+
+{% endfor %}
+{% else %}
+<p>No pools availble</p>
+
+{% endif %}
+{% endblock content %}

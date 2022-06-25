@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+
+
+
+{% block content %}
+<div class="card text-center">
+    <div class="card-body">
+        <h1>Welcome to PollStar Reviews</h1>
+        <p>This is a programming Polls questions</p>
+
+        <a href="{% url 'polls:home'  %}" class="btn btn-dark"> Please Click to view the available pools</a>
+        
+    </div>
+</div>
+
+{% endblock content %}
